@@ -13,21 +13,21 @@ async function deleteCupcake() {
 
 }
 
-$('form').on('submit', addCupcake) 
-
-
-async function addCupcake() {
+$('form').on('submit', async function (evt) {
+    evt.preventDefault()
     const flavor = $('#flavor').val();
     const size = $('#size').val();
     const rating = $('#rating').val();
     const image = $('#image').val();
-    var resp = await axios.post( '/api/cupcakes', {     
+   
+   
+    var res = await axios.post( '/api/cupcakes', {     
         "flavor": flavor,
         "size": size,
         "rating": rating,
         "image": image
     })
+    cupcake = res.data.cupcake
+    $('ul').append(`<li> ${cupcake.size} ${cupcake.flavor} cupcake <img src="${cupcake.image}"><button class=" class="delete-cupcake" data-id="${cupcake.id}">x</button> </li>`)
+}) 
 
-    return 
-
-}
