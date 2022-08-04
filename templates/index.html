@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    rel="stylesheet"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+    crossorigin="anonymous">
+
+    <title>List of Cupcakes</title>
+
+
+</head>
+<body>
+<div>
+<ul>
+    <h1>Cupcakes</h1>
+    {% for cupcake in cupcakes  %}
+    <li> {{cupcake.size}} {{cupcake.flavor}}  cupcake <button class="delete-todo" data-id="{{cupcake.id}}">x</button></li> 
+    {% endfor %}
+</ul>
+<h1>Add a Cupcake</h1>
+<form >
+<label for="size">Size <input type="text" name="size" id="size"></label>
+<br>
+<label for="flavor">Flavor <input type="text" name="flavor" id="flavor"></label>
+<br>
+<label for="rating">Rating <input type="text" name="rating" id="rating"></label>
+<br>
+<label for="image">image URL <input type="text" name="image" id="image"></label>
+<br>
+<button type="submit" formmethod="post" formaction="/api/cupcakes"> Submit</button>
+</form>
+
+</div>
+
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"
+    integrity="sha256-T/f7Sju1ZfNNfBh7skWn0idlCBcI3RwdLSS4/I7NQKQ=" 
+    crossorigin="anonymous"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+  <script src="static/cupcake.js"></script>
+
+    
+</body>
+</html>
