@@ -18,7 +18,7 @@
 <ul>
     <h1>Cupcakes</h1>
     {% for cupcake in cupcakes  %}
-    <li> {{cupcake.size}} {{cupcake.flavor}}  cupcake <button class="delete-todo" data-id="{{cupcake.id}}">x</button></li> 
+    <li> {{cupcake.size}} {{cupcake.flavor}}  cupcake <img src="{{cupcake.image}}" alt=""><button class="delete-cupcake" data-id="{{cupcake.id}}">x</button></li> 
     {% endfor %}
 </ul>
 <h1>Add a Cupcake</h1>

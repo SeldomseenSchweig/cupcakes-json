@@ -2,10 +2,10 @@
 
 
 
-$('.delete-todo').click(deleteTodo)
+$('.delete-cupcake').click(deleteCupcake)
 
 
-async function deleteTodo() {
+async function deleteCupcake() {
 
     const id =$(this).data('id')
     await axios.delete(`/api/cupcakes/${id}`)
@@ -21,11 +21,13 @@ async function addCupcake() {
     const size = $('#size').val();
     const rating = $('#rating').val();
     const image = $('#image').val();
-    await axios.post( '/api/cupcakes', {     
+    var resp = await axios.post( '/api/cupcakes', {     
         "flavor": flavor,
         "size": size,
         "rating": rating,
         "image": image
     })
+
+    return 
 
 }
