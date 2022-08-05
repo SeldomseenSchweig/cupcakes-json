@@ -28,6 +28,6 @@ $('form').on('submit', async function (evt) {
         "image": image
     })
     cupcake = res.data.cupcake
-    $('ul').append(`<li> ${cupcake.size} ${cupcake.flavor} cupcake <img src="${cupcake.image}"><button class=" class="delete-cupcake" data-id="${cupcake.id}">x</button> </li>`)
+    $('ul').append(`<li> ${cupcake.size} ${cupcake.flavor} cupcake <img src="${cupcake.image}" class="img-thumbnail"><button class=" style="max-width: 150px" class="delete-cupcake btn-danger" data-id="${cupcake.id}">x</button> </li>`)
 }) 
 
